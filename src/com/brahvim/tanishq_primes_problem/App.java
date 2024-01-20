@@ -2,10 +2,13 @@ package com.brahvim.tanishq_primes_problem;
 
 public class App {
     public static void main(final String[] args) {
-        // System.out.println(App.isHaningNumber(6));
-        // System.out.println(App.isHaningNumber(90));
-        // System.out.println(App.isHaningNumber(44));
+        System.out.println(App.isHaningNumber(6));
+        System.out.println(App.isHaningNumber(90));
+        System.out.println(App.isHaningNumber(44));
 
+        // Extra test case
+        // (this is why I use `return p_number != number;`,
+        // and not just `return true;`)!:
         System.out.println(App.isHaningNumber(13));
     }
 
@@ -42,7 +45,7 @@ public class App {
              */
         }
 
-        return number == p_number;
+        return number != p_number;
     }
 
 }
