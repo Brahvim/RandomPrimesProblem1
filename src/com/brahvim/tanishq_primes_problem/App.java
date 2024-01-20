@@ -19,11 +19,6 @@ public class App {
             if (number % i != 0)
                 continue;
 
-            // This checks if final we can still divide:
-            final float div = (float) number / (float) i;
-            if (div != number / i)
-                ; // Can't divide anymore!
-
             number /= i;
 
             if (!(i == 2 || i == 3 || i == 5))
