@@ -13,52 +13,35 @@ public class App {
     }
 
     /**
-     * This version allows using `long`s.
-     *
-     * @param p_number is the number you want to check!
-     * @return Is the number a haning number!?
-     */
-    public static boolean isHaningNumber(final long p_number) {
-        if (p_number <= 0) // If it is `0` or less, nope out!
-            return false;
-
-        if (p_number % 3 == 0)
-            if ((p_number / 3) % 5 == 0)
-                return true;
-    }
-
-    /**
      * This version uses `switch`es for checking against `int`s, and so it's faster!
      *
      * @param p_number is the number you want to check!
      * @return Is the number a haning number!?
      */
     public static boolean isHaningNumber(final int p_number) {
-        int number = p_number;
+        if (p_number < 2) // If it is `1` or less, *nope* outta' here!
+            return false;
 
-        for (int i = 2; i < number; i++) {
-            if (number % i != 0)
-                continue;
+        // Now, we know it's only positive.
 
-            number /= i;
+        if ((p_number & 1) != 0) // Is it even?
+            return false;
 
-            // if (!(i == 2 || i == 3 || i == 5))
-            // return false;
+        // Now, we know it's only even.
 
-            // This should be faster if you use `int`s.
-            // I'm using `long`s because I think user input should not have a small limit:
-
-            switch (i) {
-                case 2:
-                case 3:
-                case 5:
-                    break;
-                default:
-                    return false;
+        // Let's make sure it's not divisible by any other prime!:
+        for (int i = 6; i < p_number; i++) // Go over all numbers that it could possible be divisible by.
+            if (p_number % i == 0) { // Checking if it's divisible. Cheaper operation first.
+                final int sqrt = (int) Math.round(Math.sqrt(i));
+                // ^^^ `i` is an `int`, so it's okay to downcast...
+                // Prime number check!:
+                for (int j = 2; j < sqrt; j++) {
+                    if (i % j == 0)
+                        ;
+                }
             }
-        }
 
-        return number != p_number;
+        return p_number % 3 == 0 || p_number % 5 == 0;
     }
 
 }
