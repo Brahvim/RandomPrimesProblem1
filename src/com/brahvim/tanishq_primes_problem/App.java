@@ -24,6 +24,13 @@ public class App {
     public static boolean isHaningNumberOld(final int p_number) {
         int number = p_number;
 
+        if (p_number < 2) // `1` is not a hanning number either!
+            return false;
+
+        // Shortcut/Optimization plus `{2, 3, 5} => true` fix:
+        if (p_number < 7)
+            return true;
+
         for (int i = 2; i < number; i++) {
             if (number % i != 0)
                 continue;
