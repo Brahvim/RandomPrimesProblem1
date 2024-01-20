@@ -2,14 +2,23 @@ package com.brahvim.tanishq_primes_problem;
 
 public class App {
     public static void main(final String[] args) {
-        System.out.println(App.isHaningNumberOld(6));
-        System.out.println(App.isHaningNumberOld(90));
-        System.out.println(App.isHaningNumberOld(44));
+        // System.out.println(App.isHaningNumberOld(6));
+        // System.out.println(App.isHaningNumberOld(90));
+        // System.out.println(App.isHaningNumberOld(44));
 
         // Extra test case
         // (this is why I use `return p_number != number;`,
         // and not just `return true;`)!:
-        System.out.println(App.isHaningNumberOld(13));
+        // System.out.println(App.isHaningNumberOld(13));
+
+        // for (int i = 0; i < 10; i++)
+        // System.out.printf("%d) `%s`.%n", i, App.isHaningNumberOld(i));
+
+        for (int i = 0; i < 10; i++) {
+            final boolean oldHan = App.isHaningNumberOld(i), newHan = App.isHaningNumber(i);
+            if (oldHan != newHan)
+                System.out.printf("%d) Old: `%s`, new: `%s`.%n", i, oldHan, newHan);
+        }
     }
 
     public static boolean isHaningNumberOld(final int p_number) {
@@ -31,7 +40,7 @@ public class App {
                 case 2:
                 case 3:
                 case 5:
-                    break;
+                    return true;
                 default:
                     return false;
             }
@@ -41,8 +50,6 @@ public class App {
     }
 
     /**
-     * This version uses `switch`es for checking against `int`s, and so it's faster!
-     *
      * @param p_number is the number you want to check!
      * @return Is the number a haning number!?
      */
