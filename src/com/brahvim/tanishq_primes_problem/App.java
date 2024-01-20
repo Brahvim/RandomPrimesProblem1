@@ -22,6 +22,11 @@ public class App {
         if (p_number < 2) // If it is `1` or less, *nope* outta' here!
             return false;
 
+        if (p_number < 7) // If it's `6` or less...
+            return true; // PS This check is NECESSARY.
+        // The last `return` statement IGNORES numbers less than `4`
+        // (could be upto `6`, methinks!).
+
         // Now, we know it's only positive.
 
         if ((p_number & 1) != 0) // Is it even?
@@ -30,16 +35,19 @@ public class App {
         // Now, we know it's only even.
 
         // Let's make sure it's not divisible by any other prime!:
-        for (int i = 6; i < p_number; i++) // Go over all numbers that it could possible be divisible by.
-            if (p_number % i == 0) { // Checking if it's divisible. Cheaper operation first.
-                final int sqrt = (int) Math.round(Math.sqrt(i));
-                // ^^^ `i` is an `int`, so it's okay to downcast...
-                // Prime number check!:
-                for (int j = 2; j < sqrt; j++) {
-                    if (i % j == 0)
-                        ;
-                }
-            }
+        for (int i = 6; i < p_number; i++) { // Go over all numbers that it could possible be divisible by.
+
+            // Checking if it's divisible. Cheaper operation first:
+            if (p_number % i != 0)
+                continue; // If not, go on!
+
+            // Prime number check!:
+            final int sqrt = (int) Math.round(Math.sqrt(i)); // `i` is an `int`. It's okay to downcast...
+            for (int j = 2; j <= sqrt; j++) // Checking if `i` is prime. If it is, ...we just found another
+                                            // prime number the input is divisible by. Bye!
+                if (i % j == 0)
+                    return false;
+        }
 
         return p_number % 3 == 0 || p_number % 5 == 0;
     }
