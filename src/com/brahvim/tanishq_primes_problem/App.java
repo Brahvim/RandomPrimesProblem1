@@ -38,18 +38,26 @@ public class App {
         for (int i = 6; i < p_number; i++) { // Go over all numbers that it could possible be divisible by.
 
             // Checking if it's divisible. Cheaper operation first:
-            if (p_number % i != 0)
-                continue; // If not, go on!
-
-            // Prime number check!:
-            final int sqrt = (int) Math.round(Math.sqrt(i)); // `i` is an `int`. It's okay to downcast...
-            for (int j = 2; j <= sqrt; j++) // Checking if `i` is prime. If it is, ...we just found another
-                                            // prime number the input is divisible by. Bye!
-                if (i % j == 0)
+            if (p_number % i == 0)
+                if (App.isPrime(i)) // If it's divisible by a prime, we're out!
                     return false;
         }
 
         return p_number % 3 == 0 || p_number % 5 == 0;
+    }
+
+    // (I've been preparing this algorithm for **years**. It's my personal secret.)
+    public static boolean isPrime(final int p_number) {
+        final int sqrt = (int) Math.sqrt(p_number);
+
+        if (p_number < 2)
+            return false;
+
+        for (int i = 2; i < sqrt; i++)
+            if (p_number % i == 0)
+                return false;
+
+        return true;
     }
 
 }
