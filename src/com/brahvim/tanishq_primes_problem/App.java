@@ -35,13 +35,11 @@ public class App {
         // Now, we know it's only even.
 
         // Let's make sure it's not divisible by any other prime!:
-        for (int i = 6; i < p_number; i++) { // Go over all numbers that it could possible be divisible by.
-
+        for (int i = 6; i < p_number; i++) // Go over all numbers that it could possible be divisible by.
             // Checking if it's divisible. Cheaper operation first:
             if (p_number % i == 0)
                 if (App.isPrime(i)) // If it's divisible by a prime, we're out!
                     return false;
-        }
 
         return p_number % 3 == 0 || p_number % 5 == 0;
     }
@@ -53,7 +51,7 @@ public class App {
         if (p_number < 2)
             return false;
 
-        for (int i = 2; i < sqrt; i++)
+        for (int i = 2; i <= sqrt; i++)
             if (p_number % i == 0)
                 return false;
 
