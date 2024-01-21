@@ -29,15 +29,27 @@ n=44
 plz don't solve this problem by ( return statement)  
 """
 
-## ...
+## I'm no computer scientist!
 
 I worked till 1 in the night and then another 2 hours in the morning to solve it ._.  
 ***Too slow!*** ..I know, real computer scientists reading this!  
+
 (PS *Some online friends had me talking,* ...uhh, I haven't been on Discord for months, lately - that's why!)  
 (I can't stay awake. *I don't risk my sleep.*)  
-But it worked! And I had *at least two* **actual** solutions.  
+
+...But it worked! And I had *at least two* **actual** solutions.  
 I was trying to optimize the code and 'making discoveries' all this time! Haha...
 
-*Here are some links ta' help you out!:*
+## *Here are some links ta' help you out!:*
 - [The final version I wrote](https://github.com/Brahvim/RandomPrimesProblem1/blob/main/src/com/brahvim/tanishq_primes_problem/App.java), and,  
 - [The version I sent him](https://github.com/Brahvim/RandomPrimesProblem1/blob/no-return/src/com/brahvim/tanishq_primes_problem/App.java), which does not use returns, as per the problem's requirement (thank C!).
+
+### *Epilogue:*
+
+That's it! Done writing this README. It's 7:41 IST (GMT+5:30 / UTC+5:30) in the morning of 21 January 2024 now!  
+\<Yaaaaaaaaawn!\>! ...this is my first holiday for this month after *20 days* of college exams (6 exams spread over 20 days, okay?! I'm no show off! Especially not a fake one!).  
+...alright, -O-!  
+...
+
+...^-^!  
+Bye! ":D!  
